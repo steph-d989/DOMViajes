@@ -52,7 +52,6 @@ imgTitulo.setAttribute('src', arrayEncabezado[0][0]);
 imgTitulo.setAttribute('alt', arrayEncabezado[0][1]);
 
 eventoTitulo.addEventListener('click', cambiarPortada)
-eventoViaje.addEventListener('mouseover', cambiarGaleria)
 
 function cambiarPortada() {
 
@@ -61,13 +60,6 @@ function cambiarPortada() {
         imgTitulo.setAttribute('src', arrayEncabezado[numeroRandom][0]);
         imgTitulo.setAttribute('alt', arrayEncabezado[numeroRandom][1]);
     }
-}
-
-function cambiarGaleria(){
-    let divGaleria = document.createElement('div');
-    for(let i=0; i<arrayViajes.length; i++){
-    divGaleria.innerHTML = arrayViajes[i][1]
-}
 }
 
 if (divCuerpo) {
