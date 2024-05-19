@@ -25,7 +25,6 @@ divTitulo.setAttribute('id', 'imagenEncabezado');
 
 let arrayEncabezado = [
     ['./assets/1.jpg', 'Portada 1'],
-    ['./assets/1.jpg', 'Portada 1'],
     ['./assets/2.jpg', 'Portada 2'],
     ['./assets/3.jpg', 'Portada 3'],
     ['./assets/4.jpg', 'Portada 4'],
@@ -53,6 +52,7 @@ imgTitulo.setAttribute('src', arrayEncabezado[0][0]);
 imgTitulo.setAttribute('alt', arrayEncabezado[0][1]);
 
 eventoTitulo.addEventListener('click', cambiarPortada)
+eventoViaje.addEventListener('mouseover', cambiarGaleria)
 
 function cambiarPortada() {
 
@@ -61,6 +61,13 @@ function cambiarPortada() {
         imgTitulo.setAttribute('src', arrayEncabezado[numeroRandom][0]);
         imgTitulo.setAttribute('alt', arrayEncabezado[numeroRandom][1]);
     }
+}
+
+function cambiarGaleria(){
+    let divGaleria = document.createElement('div');
+    for(let i=0; i<arrayViajes.length; i++){
+    divGaleria.innerHTML = arrayViajes[i][1]
+}
 }
 
 if (divCuerpo) {
@@ -73,12 +80,12 @@ if (divCuerpo) {
         viajesImgFigure.innerHTML = arrayViajes[i][1];
         viajesImg.setAttribute('src', arrayViajes[i][0]);
         viajesImg.setAttribute('alt', arrayViajes[i][2]);
+        viajesImg.setAttribute('class','viaje')
         viajesFigCaption.innerHTML = arrayViajes[i][3];
 
         divCuerpo.appendChild(viajesImgFigure);
         viajesImgFigure.appendChild(viajesImg);
         viajesImgFigure.appendChild(viajesFigCaption)
-
     }
 }
 
@@ -137,7 +144,6 @@ selectPie.appendChild(optgroup5);
 if (formPie) {
     for (let i = 0; i < destinations.length; i++) {
         let option;
-
         if (destinations[i][0] === 'optgroup1') {
             option = document.createElement('option');
             option.setAttribute('value', destinations[i][1]);
