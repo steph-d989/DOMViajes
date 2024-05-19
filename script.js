@@ -8,18 +8,18 @@ sectionCuerpo.setAttribute('id', 'cuerpo')
 
 let divCuerpo = document.createElement('div');
 sectionCuerpo.appendChild(divCuerpo)
-divCuerpo.setAttribute('id','galeria');
+divCuerpo.setAttribute('id', 'galeria');
 
 let bodyHead = cuerpoBody.previousElementSibling;
 bodyHead.setAttribute('id', 'encabezadoPagina');
 
 let divPiePagina = document.createElement('div');
 piePagina.appendChild(divPiePagina);
-divPiePagina.setAttribute('id','pie')
+divPiePagina.setAttribute('id', 'pie')
 
 let divTitulo = document.createElement('div')
 titulo.appendChild(divTitulo);
-divTitulo.setAttribute('id','imagenEncabezado');
+divTitulo.setAttribute('id', 'imagenEncabezado');
 
 //Array imagenes
 
@@ -42,28 +42,26 @@ let arrayViajes = [
     ['./assets/viajes-6.jpg', '<span>Viajes 6</span>', 'Formacion rocosa, tunel con pista', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa sed elementum tempus egestas sed. </p>'],
     ['./assets/viajes-7.jpg', '<span>Viajes 7</span>', 'Mujer en amaca y pal', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis massa sed elementum tempus egestas sed.</p>']];
 
-    
+
 let eventoTitulo = document.getElementById('imagenEncabezado');
-let figureTitulo =document.createElement('figure');
+let figureTitulo = document.createElement('figure');
 let imgTitulo = document.createElement('img');
 
 eventoTitulo.appendChild(figureTitulo);
 figureTitulo.appendChild(imgTitulo);
-imgTitulo.setAttribute('src',arrayEncabezado[0][0]);
-imgTitulo.setAttribute('alt',arrayEncabezado[0][1]);
-
+imgTitulo.setAttribute('src', arrayEncabezado[0][0]);
+imgTitulo.setAttribute('alt', arrayEncabezado[0][1]);
 
 eventoTitulo.addEventListener('click', cambiarPortada)
 
-function cambiarPortada(){
-    if('click'){
-        for(let i=0; i<arrayEncabezado.length; i++){
-            imgTitulo.setAttribute('src',arrayEncabezado[i][0]);
-            imgTitulo.setAttribute('alt',arrayEncabezado[i][1]);
-}
-}
-}
+function cambiarPortada() {
 
+    for (let i = 0; i < arrayEncabezado.length; i++) {
+        let numeroRandom = Math.floor(Math.random() * (arrayEncabezado.length - 1))
+        imgTitulo.setAttribute('src', arrayEncabezado[numeroRandom][0]);
+        imgTitulo.setAttribute('alt', arrayEncabezado[numeroRandom][1]);
+    }
+}
 
 if (divCuerpo) {
     for (let i = 0; i < arrayViajes.length; i++) {
@@ -71,9 +69,9 @@ if (divCuerpo) {
         let viajesImg = document.createElement("img");
         let viajesFigCaption = document.createElement("figcaption");
 
-        viajesImgFigure.setAttribute('class','foto');
+        viajesImgFigure.setAttribute('class', 'foto');
         viajesImgFigure.innerHTML = arrayViajes[i][1];
-        viajesImg.setAttribute('src',arrayViajes[i][0]);
+        viajesImg.setAttribute('src', arrayViajes[i][0]);
         viajesImg.setAttribute('alt', arrayViajes[i][2]);
         viajesFigCaption.innerHTML = arrayViajes[i][3];
 
@@ -84,14 +82,22 @@ if (divCuerpo) {
     }
 }
 
-/* let destinations = [
-    ['optgroup1','Colombia','Colombia','']
-] */
-
+let destinations = [
+    ['optgroup1', 'Colombia', 'Colombia'],
+    ['optgroup1', 'Peru', 'Perú'],
+    ['optgroup2', 'España', 'España'],
+    ['optgroup2', 'Francia', 'Francia'],
+    ['optgroup3', 'Japon', 'Japón'],
+    ['optgroup3', 'China', 'China'],
+    ['optgroup4', 'Egipto', 'Egipto'],
+    ['optgroup4', 'Nigeria', 'Nigeria'],
+    ['optgroup5', 'Australia', 'Australia'],
+    ['optgroup5', 'NuevaZelanda', 'Nueva Zelanda']
+]
 
 let formPie = document.createElement('form');
 formPie.setAttribute('id', 'formulario')
-formPie.setAttribute('action','#')
+formPie.setAttribute('action', '#')
 let labelPie = document.createElement('label');
 let option = document.createElement('option');
 option.setAttribute('value', '');
@@ -101,49 +107,62 @@ labelPie.setAttribute('for', 'destinations');
 let selectPie = document.createElement('select');
 selectPie.setAttribute('id', 'selectForm')
 selectPie.setAttribute('name', 'destinations')
+selectPie.appendChild(option);
+
 let optgroup1 = document.createElement('optgroup')
 optgroup1.setAttribute('label', 'America')
-let option1 = document.createElement('option');
-option1.setAttribute('value', 'Colombia')
-let option2 = document.createElement('option');
-option2.setAttribute('value', 'Peru')
+optgroup1.innerHTML = 'America';
 let optgroup2 = document.createElement('optgroup')
 optgroup2.setAttribute('label', 'Europa')
-let option3 = document.createElement('option');
-option1.setAttribute('value', 'España')
-let option4 = document.createElement('option');
-option2.setAttribute('value', 'Francia')
+optgroup2.innerHTML = 'Europa';
 let optgroup3 = document.createElement('optgroup')
 optgroup3.setAttribute('label', 'Asia')
-let option5 = document.createElement('option');
-option5.setAttribute('value', 'Japon')
-let option6 = document.createElement('option');
-option6.setAttribute('value', 'China')
-
-optgroup1.innerHTML='America';
-optgroup2.innerHTML='Europa';
-optgroup3.innerHTML='Asia';
-option1.innerHTML='Colombia';
-option2.innerHTML='Perú';
-option3.innerHTML='España';
-option4.innerHTML='Francia';
-option5.innerHTML='Japón';
-option6.innerHTML='China';
-
-
-
+optgroup3.innerHTML = 'Asia';
+let optgroup4 = document.createElement('optgroup')
+optgroup4.setAttribute('label', 'Africa')
+optgroup4.innerHTML = 'Africa';
+let optgroup5 = document.createElement('optgroup')
+optgroup5.setAttribute('label', 'Oceania')
+optgroup5.innerHTML = 'Oceania';
 
 divPiePagina.appendChild(formPie);
 formPie.appendChild(labelPie);
 formPie.appendChild(selectPie);
-selectPie.appendChild(option);
 selectPie.appendChild(optgroup1);
 selectPie.appendChild(optgroup2);
 selectPie.appendChild(optgroup3);
-optgroup1.appendChild(option1);
-optgroup1.appendChild(option2);
-optgroup2.appendChild(option3);
-optgroup2.appendChild(option4);
-optgroup3.appendChild(option5);
-optgroup3.appendChild(option6);
+selectPie.appendChild(optgroup4);
+selectPie.appendChild(optgroup5);
 
+if (formPie) {
+    for (let i = 0; i < destinations.length; i++) {
+        let option;
+
+        if (destinations[i][0] === 'optgroup1') {
+            option = document.createElement('option');
+            option.setAttribute('value', destinations[i][1]);
+            option.innerHTML = destinations[i][2];
+            optgroup1.appendChild(option);
+        } else if (destinations[i][0] === 'optgroup2') {
+            option = document.createElement('option');
+            option.setAttribute('value', destinations[i][1]);
+            option.innerHTML = destinations[i][2];
+            optgroup2.appendChild(option);
+        } else if (destinations[i][0] === 'optgroup3') {
+            option = document.createElement('option');
+            option.setAttribute('value', destinations[i][1]);
+            option.innerHTML = destinations[i][2];
+            optgroup3.appendChild(option);
+        } else if (destinations[i][0] === 'optgroup4') {
+            option = document.createElement('option');
+            option.setAttribute('value', destinations[i][1]);
+            option.innerHTML = destinations[i][2];
+            optgroup4.appendChild(option);
+        } else {
+            option = document.createElement('option');
+            option.setAttribute('value', destinations[i][1]);
+            option.innerHTML = destinations[i][2];
+            optgroup5.appendChild(option);
+        }
+    }
+}
