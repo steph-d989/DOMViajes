@@ -1,0 +1,105 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+.foto {
+    border: 0.5px gray solid shadow;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 250px;
+}
+
+#encabezadoPagina {
+    background-color: rgb(54, 52, 52);
+    color: white;
+    text-align: center;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+figcaption {
+    text-align: justify;
+}
+
+#galeria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+#titulo {
+    margin-top: 70px
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.foto span {
+    font-weight: bold;
+}
+
+#selectForm {
+    width: 100%;
+}
+
+#pie {
+    margin-top: 0;
+}
+
+#piePagina h4 {
+    margin-bottom: 0;
+}
+
+#cuerpo h4 {
+    margin-bottom: 0;
+}
+
+#titulo h4 {
+    margin-bottom: 0;
+}
+
+#imagenEncabezado {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#imagenEncabezado figure {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-content: center;
+}
+
+#imagenEncabezado figure img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+main,
+footer {
+    align-items: center;
+    width: 80%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
